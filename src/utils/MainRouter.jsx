@@ -27,69 +27,111 @@ const MainRouter = () => {
   return (
     <Router>
       <Switch>
-        <Route exact path='/'>
+        <Route path='/'>
           <Home />
         </Route>
+      </Switch>
+      <Switch>
         <Route path='/home2'>
           <Home2 />
         </Route>
+      </Switch>
+      <Switch>
         <Route path='/charts'>
           <Charts />
         </Route>
+      </Switch>
+      <Switch>
         <Route path='/error403'>
           <Error403 />
         </Route>
+      </Switch>
+      <Switch>
         <Route path='/error404'>
           <Error404 />
         </Route>
+      </Switch>
+      <Switch>
         <Route path='/error405'>
           <Error405 />
         </Route>
+      </Switch>
+      <Switch>
         <Route path='/error500'>
           <Error500 />
         </Route>
+      </Switch>
+      <Switch>
         <Route path='/form_wizard'>
           <FormWizard />
         </Route>
+      </Switch>
+      <Switch>
         <Route path='/form_basic'>
           <FromBasic />
         </Route>
+      </Switch>
+      <Switch>
         <Route path='/grid'>
           <Grid />
         </Route>
+      </Switch>
+      <Switch>
         <Route path='/icon_fontawesome'>
           <IconFontAwesome />
         </Route>
+      </Switch>
+      <Switch>
         <Route path='/icon_material'>
           <IconMaterial />
         </Route>
+      </Switch>
+      <Switch>
         <Route path='/pages_buttons'>
           <PagesButtons />
         </Route>
+      </Switch>
+      <Switch>
         <Route path='/pages_calender'>
           <PagesCalender />
         </Route>
+      </Switch>
+      <Switch>
         <Route path='/pages_chat'>
           <PagesChat />
         </Route>
+      </Switch>
+      <Switch>
         <Route path='/pages_elements'>
           <PagesElements />
         </Route>
+      </Switch>
+      <Switch>
         <Route path='/pages_gallery'>
           <PagesGallery />
         </Route>
+      </Switch>
+      <Switch>
         <Route path='/pages_invoice'>
           <PagesInvoice />
         </Route>
+      </Switch>
+      <Switch>
         <Route path='/signin'>
           <SignIn />
         </Route>
+      </Switch>
+      <Switch>
         <Route path='/signup'>
           <SignUp />
         </Route>
+      </Switch>
+      <Switch>
         <Route path='/tables'>
           <Tables />
         </Route>
+      </Switch>
+      <Switch>
         <Route path='/widgets'>
           <Widgets />
         </Route>

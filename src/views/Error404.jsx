@@ -7,12 +7,7 @@ const Error404 = () => {
         {/* ============================================================== */}
         {/* Preloader - style you can find in spinners.css */}
         {/* ============================================================== */}
-        <div className='preloader'>
-          <div className='lds-ripple'>
-            <div className='lds-pos' />
-            <div className='lds-pos' />
-          </div>
-        </div>
+
         {/* ============================================================== */}
         {/* Preloader - style you can find in spinners.css */}
         {/* ============================================================== */}
