@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Error404 = () => {
   return (
@@ -21,8 +22,8 @@ const Error404 = () => {
             <p className='text-muted mt-4 mb-4'>
               YOU SEEM TO BE TRYING TO FIND HIS WAY HOME
             </p>
-            <a
-              href='index.html'
+            <Link
+              to='/'
               className='
         btn btn-danger btn-rounded
         waves-effect waves-light
@@ -30,7 +31,7 @@ const Error404 = () => {
         text-white
       '>
               Back to home
-            </a>
+            </Link>
           </div>
         </div>
         {/* ============================================================== */}

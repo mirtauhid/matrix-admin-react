@@ -29,7 +29,7 @@ $(function () {
   }
   // Set up the control widget
   var updateInterval = 1000;
-  $("#updateInterval")
+  $('#updateInterval')
     .val(updateInterval)
     .change(function () {
       var v = $(this).val();
@@ -40,13 +40,13 @@ $(function () {
         } else if (updateInterval > 1000) {
           updateInterval = 1000;
         }
-        $(this).val("" + updateInterval);
+        $(this).val('' + updateInterval);
       }
     });
-  var plot = $.plot("#real-time", [getRandomData()], {
+  var plot = $.plot('#real-time', [getRandomData()], {
     series: {
       shadowSize: 1, // Drawing is faster without shadows
-      lines: { fill: true, fillColor: "transparent" },
+      lines: { fill: true, fillColor: 'transparent' },
     },
     yaxis: {
       min: 0,
@@ -56,21 +56,21 @@ $(function () {
     xaxis: {
       show: false,
     },
-    colors: ["#488c13"],
+    colors: ['#488c13'],
     grid: {
-      color: "#AFAFAF",
+      color: '#AFAFAF',
       hoverable: true,
       borderWidth: 0,
-      backgroundColor: "transparent",
+      backgroundColor: 'transparent',
     },
     tooltip: true,
     tooltipOpts: {
-      content: "Visits: %x",
+      content: 'Visits: %x',
       defaultTheme: false,
     },
   });
   window.onresize = function (event) {
-    $.plot($("#real-time"), [getRandomData()]);
+    $.plot($('#real-time'), [getRandomData()]);
   };
 
   function update() {
@@ -81,7 +81,7 @@ $(function () {
   }
   update();
 
-  console.log("document ready");
+  console.log('document ready');
   var offset = 0;
   plot1();
 
@@ -108,12 +108,12 @@ $(function () {
         min: -1.2,
         max: 1.2,
       },
-      colors: ["#ee7951", "#4fb9f0"],
+      colors: ['#ee7951', '#4fb9f0'],
       grid: {
-        color: "#AFAFAF",
+        color: '#AFAFAF',
         hoverable: true,
         borderWidth: 0,
-        backgroundColor: "#FFF",
+        backgroundColor: '#FFF',
       },
       tooltip: true,
       tooltipOpts: {
@@ -125,15 +125,15 @@ $(function () {
       },
     };
     var plotObj = $.plot(
-      $("#flot-line-chart"),
+      $('#flot-line-chart'),
       [
         {
           data: sin,
-          label: "sin(x)",
+          label: 'sin(x)',
         },
         {
           data: cos,
-          label: "cos(x)",
+          label: 'cos(x)',
         },
       ],
       options

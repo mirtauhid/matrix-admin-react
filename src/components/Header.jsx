@@ -1,6 +1,15 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { Link } from 'react-router-dom';
+import { NavContext } from '../App';
 
 const Header = () => {
+  const [nav, setNav] = useContext(NavContext);
+
+  const logOut = () => {
+    window.sessionStorage.clear();
+    window.location.reload();
+  };
+
   return (
     <header className='topbar' data-navbarbg='skin5'>
       <nav className='navbar top-navbar navbar-expand-md navbar-dark'>
@@ -11,7 +20,7 @@ const Header = () => {
           {/* ============================================================== */}
           {/* Logo */}
           {/* ============================================================== */}
-          <a className='navbar-brand' href='index.html'>
+          <Link className='navbar-brand' to='/'>
             {/* Logo icon */}
             <b className='logo-icon ps-2'>
               {/*You can put here icon as well // <i class="wi wi-sunset"></i> //*/}
@@ -40,18 +49,28 @@ const Header = () => {
             {/* <img src="../assets/images/logo-text.png" alt="homepage" class="light-logo" /> */}
             {/* </b> */}
             {/*End Logo icon */}
-          </a>
+          </Link>
           {/* ============================================================== */}
           {/* End Logo */}
           {/* ============================================================== */}
           {/* ============================================================== */}
           {/* Toggle which is visible on mobile only */}
           {/* ============================================================== */}
-          <a
-            className='nav-toggler waves-effect waves-light d-block d-md-none'
-            href='javascript:void(0)'>
-            <i className='ti-menu ti-close' />
-          </a>
+          {nav ? (
+            <a
+              onClick={() => setNav(false)}
+              className='nav-toggler waves-effect waves-light d-block d-md-none'
+              href='javascript:void(0)'>
+              <i className='ti-menu ti-close' />
+            </a>
+          ) : (
+            <a
+              onClick={() => (nav ? setNav(false) : setNav(true))}
+              className='nav-toggler waves-effect waves-light d-block d-md-none'
+              href='javascript:void(0)'>
+              <i className='ti-menu ti-close' />
+            </a>
+          )}
         </div>
         {/* ============================================================== */}
         {/* End Logo */}
@@ -326,9 +345,9 @@ const Header = () => {
                   <i className='mdi mdi-settings me-1 ms-1' /> Account Setting
                 </a>
                 <div className='dropdown-divider' />
-                <a className='dropdown-item' href='javascript:void(0)'>
+                <button onClick={() => logOut()} className='dropdown-item'>
                   <i className='fa fa-power-off me-1 ms-1' /> Logout
-                </a>
+                </button>
                 <div className='dropdown-divider' />
                 <div className='ps-4 p-10'>
                   <a

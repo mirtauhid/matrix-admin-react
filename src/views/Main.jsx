@@ -6,26 +6,15 @@ import SideBar from '../components/SideBar';
 import MainRouter from '../utils/MainRouter';
 
 const Main = () => {
+  const check = window.sessionStorage.getItem('token');
   return (
-    <div id='container'>
-      <div id='preloader'>
-        <Preloader />
-      </div>
-      <div id='header'>
-        <Header />
-      </div>
-      <div id='main'>
-        <div id='sidebar'>
-          <SideBar />
-        </div>
-        <div id='views'>
-          <MainRouter />
-        </div>
-      </div>
-      <div id='footer'>
-        <Footer />
-      </div>
-    </div>
+    <>
+      {check ? <div></div> : <Preloader />}
+      <Header />
+      <SideBar />
+      <MainRouter />
+      <Footer />
+    </>
   );
 };
 

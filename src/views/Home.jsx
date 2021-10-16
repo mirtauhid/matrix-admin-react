@@ -1,4 +1,30 @@
 import React from 'react';
+import { Line } from 'react-chartjs-2';
+
+const data = {
+  labels: ['1', '2', '3', '4', '5', '6'],
+  datasets: [
+    {
+      label: '# of Votes',
+      data: [12, 19, 3, 5, 2, 3],
+      fill: false,
+      backgroundColor: 'rgb(255, 99, 132)',
+      borderColor: 'rgba(255, 99, 132, 0.2)',
+    },
+  ],
+};
+
+const options = {
+  scales: {
+    yAxes: [
+      {
+        ticks: {
+          beginAtZero: true,
+        },
+      },
+    ],
+  },
+};
 
 const Home = () => {
   return (
@@ -188,23 +214,16 @@ const Home = () => {
                 <div className='col-md-12'>
                   <div className='card'>
                     <div className='card-body'>
-                      <div className='d-md-flex align-items-center'>
-                        <div>
-                          <h4 className='card-title'>Site Analysis</h4>
-                          <h5 className='card-subtitle'>
-                            Overview of Latest Month
-                          </h5>
-                        </div>
-                      </div>
+                      <div className='d-md-flex align-items-center'></div>
                       <div className='row'>
                         {/* column */}
                         <div className='col-lg-9'>
-                          <div className='flot-chart'>
-                            <div
-                              className='flot-chart-content'
-                              id='flot-line-chart'
-                            />
-                          </div>
+                          <>
+                            <div className='header'>
+                              <h1 className='title'>Site Analysis</h1>
+                            </div>
+                            <Line data={data} options={options} />
+                          </>
                         </div>
                         <div className='col-lg-3'>
                           <div className='row'>

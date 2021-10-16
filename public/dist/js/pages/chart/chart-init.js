@@ -23,7 +23,7 @@ $(function () {
   }
   // Set up the control widget
   var updateInterval = 1000;
-  $("#updateInterval")
+  $('#updateInterval')
     .val(updateInterval)
     .change(function () {
       var v = $(this).val();
@@ -34,13 +34,13 @@ $(function () {
         } else if (updateInterval > 1000) {
           updateInterval = 1000;
         }
-        $(this).val("" + updateInterval);
+        $(this).val('' + updateInterval);
       }
     });
-  var plot = $.plot("#placeholder1", [getRandomData()], {
+  var plot = $.plot('#placeholder1', [getRandomData()], {
     series: {
       shadowSize: 1, // Drawing is faster without shadows
-      lines: { fill: true, fillColor: "transparent" },
+      lines: { fill: true, fillColor: 'transparent' },
     },
     yaxis: {
       min: 0,
@@ -50,21 +50,21 @@ $(function () {
     xaxis: {
       show: false,
     },
-    colors: ["#fe5419"],
+    colors: ['#fe5419'],
     grid: {
-      color: "#AFAFAF",
+      color: '#AFAFAF',
       hoverable: true,
       borderWidth: 0,
-      backgroundColor: "transparent",
+      backgroundColor: 'transparent',
     },
     tooltip: true,
     tooltipOpts: {
-      content: "Visits: %x",
+      content: 'Visits: %x',
       defaultTheme: false,
     },
   });
   window.onresize = function (event) {
-    $.plot($("#placeholder1"), [getRandomData()]);
+    $.plot($('#placeholder1'), [getRandomData()]);
   };
   function update() {
     plot.setData([getRandomData()]);
