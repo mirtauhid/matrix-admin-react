@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const api = 'https://obscure-gorge-38584.herokuapp.com/api';
+const api = '/api';
 
 export const register = async (data) => {
   try {
